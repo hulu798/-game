@@ -1,0 +1,229 @@
+/* 全局样式设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.current-score,
+.high-score {
+    padding: 10px 15px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    min-width: 150px;
+}
+
+#score,
+#highScore {
+    font-weight: bold;
+    color: #e74c3c;
+    margin-left: 5px;
+}
+
+/* 游戏区域样式 */
+.game-area-container {
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #ecf0f1;
+    border: 3px solid #34495e;
+    border-radius: 5px;
+}
+
+/* 控制区域样式 */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.buttons button,
+#restartButton {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover,
+#restartButton:hover {
+    background-color: #2980b9;
+}
+
+#pauseButton {
+    background-color: #e67e22;
+}
+
+#pauseButton:hover {
+    background-color: #d35400;
+}
+
+.difficulty {
+    display: flex;
+    align-items: center;
+}
+
+.difficulty label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.difficulty select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    font-size: 0.9rem;
+}
+
+/* 移动控制按钮 */
+.mobile-controls {
+    display: none;
+    margin: 20px auto;
+    width: 200px;
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.mobile-controls button {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    font-size: 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mobile-controls button:hover {
+    background-color: #2980b9;
+}
+
+/* 游戏说明 */
+.instructions {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #3498db;
+    border-radius: 0 5px 5px 0;
+}
+
+.instructions h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    margin: 8px 0;
+}
+
+/* 游戏结束模态框 */
+.modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#finalScore {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .game-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .mobile-controls {
+        display: block;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .buttons,
+    .difficulty {
+        margin-bottom: 15px;
+    }
+}
